@@ -1,3 +1,21 @@
+//#region DOM
+const bookCardList = document.querySelector("#bookCardSection");
+const btnCreateBook = document.querySelector("#btn-createBook");
+const bookNameInput = document.querySelector("#bookName");
+const authorInput = document.querySelector("#authorName");
+const pagesInput = document.querySelector("#pages");
+const readBool = document.querySelector("#read");
+const bookForm = document.querySelector("#bookForm");
+const btnModal = document.querySelector("#modal-button");
+
+//#endregion
+
+//#region variables
+const LIBRARY = [];
+//#endregion
+
+//#region Bootstrap
+
 (() => {
   "use strict";
 
@@ -12,6 +30,20 @@
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
+        } else {
+          event.preventDefault();
+          const modal = document.querySelector("#createBook");
+          btnCreateBook.setAttribute("data-bs-dismiss", "modal");
+          const bootstrapModal = bootstrap.Modal.getInstance(modal);
+          bootstrapModal.hide();
+          const book = new Book(
+            bookNameInput.value,
+            authorInput.value,
+            pagesInput.value,
+            readBool.checked
+          );
+          LIBRARY.push(book);
+          Print();
         }
 
         form.classList.add("was-validated");
@@ -21,8 +53,15 @@
   });
 })();
 
-const LIBRARY = [];
+//#endregion
 
+//#region Event Listener //
+
+//#endregion
+
+function Print() {
+  console.log(LIBRARY);
+}
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;

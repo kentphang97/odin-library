@@ -67,6 +67,7 @@
                 class="btn btn-secondary"
                 data-bs-toggle="modal"
                 data-bs-target="#createBook"
+                id="modal-button"
               >
                 Add Book
               </button>
@@ -108,7 +109,10 @@
           <p class="lead text-muted">Add and view books that you like...</p>
         </div>
 
-        <div class="row my-5 justify-content-center align-items-center">
+        <div
+          class="row my-5 justify-content-center align-items-center"
+          id="bookCardSection"
+        >
           <!--Books List-->
           <div class="col-8 col-lg-4 col-xl-3">
             <div class="card border-success mb-3">
@@ -132,9 +136,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot1"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot1"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -165,9 +171,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot2"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot2"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -198,9 +206,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot3"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot3"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -231,9 +241,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot4"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot4"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -264,9 +276,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot5"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot5"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -297,9 +311,11 @@
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="readOrNot"
+                      id="readOrNot6"
                     />
-                    <label class="form-check-label" for="readOrNot">Read</label>
+                    <label class="form-check-label" for="readOrNot6"
+                      >Read</label
+                    >
                   </div>
                 </h6>
               </div>
@@ -313,6 +329,8 @@
     <!--create book modal-->
     <div
       class="modal fade"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
       id="createBook"
       tabindex="-1"
       aria-labelledby="createBookModal"
@@ -331,7 +349,7 @@
           </div>
           <div class="modal-body">
             <!--Book Creation Form-->
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate id="bookForm">
               <!--Book Name-->
               <label for="bookName" class="form-label">Book Name:</label>
               <div class="input-group mb-4">
@@ -412,7 +430,13 @@
                 >
                   Close
                 </button>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="btn-createBook"
+                >
+                  Create
+                </button>
               </div>
               <!---->
             </form>
