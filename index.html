@@ -62,7 +62,14 @@
               <a class="nav-link" href="#contact">Get in Touch</a>
             </li>
             <li class="nav-item ms-md-1">
-              <a class="btn btn-secondary" href="#create">Add Book</a>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#createBook"
+              >
+                Add Book
+              </button>
             </li>
           </ul>
         </div>
@@ -302,6 +309,119 @@
         </div>
       </div>
     </section>
+
+    <!--create book modal-->
+    <div
+      class="modal fade"
+      id="createBook"
+      tabindex="-1"
+      aria-labelledby="createBookModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="bookCreation">Book Creation</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!--Book Creation Form-->
+            <form class="needs-validation" novalidate>
+              <!--Book Name-->
+              <label for="bookName" class="form-label">Book Name:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text"
+                  ><i class="bi bi-journal-plus"></i
+                ></span>
+                <input
+                  required
+                  type="text"
+                  id="bookName"
+                  class="form-control"
+                  placeholder="e.g. The History of Tom Jones, a Foundling"
+                />
+                <div class="invalid-feedback ms-5">
+                  Please enter a valid name.
+                </div>
+              </div>
+
+              <!---->
+
+              <!--Author Name-->
+              <label for="authorName" class="form-label">Author Name:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text"
+                  ><i class="bi bi-person-plus"></i
+                ></span>
+                <input
+                  required
+                  type="text"
+                  id="authorName"
+                  class="form-control"
+                  placeholder="e.g. George R. R. Martin"
+                />
+                <div class="invalid-feedback ms-5">
+                  Please enter a valid name.
+                </div>
+              </div>
+              <!---->
+
+              <!--Pages-->
+              <label for="pages" class="form-label">Total Pages:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text"
+                  ><i class="bi bi-list-task"></i
+                ></span>
+                <input
+                  min="1"
+                  required
+                  type="number"
+                  id="pages"
+                  class="form-control"
+                  placeholder="e.g. 100"
+                />
+                <div class="invalid-feedback ms-5">
+                  Please enter a valid number.
+                </div>
+              </div>
+              <!---->
+              <!--Read or Not-->
+              <div class="form-check ms-1">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="read"
+                />
+                <label class="form-check-label" for="read">
+                  Did You Read this Book?
+                </label>
+              </div>
+              <!---->
+              <!--Close/Submit Button-->
+              <div class="d-flex justify-content-end gap-1">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">Create</button>
+              </div>
+              <!---->
+            </form>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
 
     <script src="javascript.js"></script>
     <script
