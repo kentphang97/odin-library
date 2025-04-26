@@ -36,13 +36,12 @@ const LIBRARY = [];
           btnCreateBook.setAttribute("data-bs-dismiss", "modal");
           const bootstrapModal = bootstrap.Modal.getInstance(modal);
           bootstrapModal.hide();
-          const book = new Book(
+          addBookToLibrary(
             bookNameInput.value,
             authorInput.value,
             pagesInput.value,
             readBool.checked
           );
-          LIBRARY.push(book);
           Print();
         }
 
@@ -58,9 +57,15 @@ const LIBRARY = [];
 //#region Event Listener //
 
 //#endregion
+function createBookCard() {}
 
 function Print() {
   console.log(LIBRARY);
+}
+
+function addBookToLibrary(title, author, pages, read) {
+  const book = new Book(title, author, pages, read);
+  LIBRARY.push(book);
 }
 class Book {
   constructor(title, author, pages, read) {
